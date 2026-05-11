@@ -1,0 +1,197 @@
+:root {
+  --primary-50: #f0f4ff;
+  --primary-100: #e0e9ff;
+  --primary-200: #c7d6fe;
+  --primary-300: #a5b9fc;
+  --primary-400: #8295f8;
+  --primary-500: #667eea;
+  --primary-600: #5850bc;
+  --primary-700: #4c3d96;
+  --primary-800: #3d2e73;
+  --primary-900: #2a1f50;
+  
+  --success: #10b981;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  --info: #3b82f6;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+// Custom scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-500);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-600);
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.3s ease-out;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// Utility classes
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: var(--text-secondary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-secondary);
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-500);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    &:hover {
+      background: var(--primary-600);
+    }
+  }
+}
+
+// Hindi Font Support
+@font-face {
+  font-family: 'NotoSansHindi';
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Mangal';
+  src: local('Mangal'), url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap');
+}
+
+@font-face {
+  font-family: 'KurtiDev';
+  src: local('Kurti Dev'), local('KurtiDev');
+}
+
+// Hindi text ke liye specific styles
+.hindi-text, 
+[data-language="hindi"],
+.text-panel .reference-text,
+.typing-textarea {
+  font-family: 'Noto Sans Devanagari', 'NotoSansHindi', 'Mangal', 'Kurti Dev', 'Nirmala UI', 'Segoe UI', sans-serif !important;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  letter-spacing: normal;
+  word-break: break-word;
+}
+
+// Ensure proper rendering of conjuncts and matras
+.reference-text {
+  .char {
+    display: inline-block;
+    font-family: inherit;
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
+
+// Fix for Hindi characters breaking
+.text-content {
+  .reference-text {
+    font-family: 'Noto Sans Devanagari', 'NotoSansHindi', 'Mangal', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.9;
+    
+    span {
+      display: inline;
+      white-space: normal;
+    }
+  }
+}

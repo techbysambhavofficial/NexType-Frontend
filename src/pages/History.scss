@@ -1,0 +1,180 @@
+.history {
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    .page-title {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .export-btn {
+      background: transparent;
+      border: 2px solid var(--primary-500);
+      color: var(--primary-500);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        background: var(--primary-500);
+        color: white;
+      }
+    }
+  }
+  
+  .stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    
+    .stat-card {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      svg {
+        font-size: 2rem;
+        color: var(--primary-500);
+      }
+      
+      .stat-info {
+        flex: 1;
+        
+        .stat-label {
+          display: block;
+          font-size: 0.75rem;
+          color: var(--text-secondary);
+          margin-bottom: 0.25rem;
+        }
+        
+        .stat-value {
+          display: block;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--text-primary);
+        }
+      }
+    }
+  }
+  
+  .tests-table-container {
+    overflow-x: auto;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 1rem;
+    
+    .tests-table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      th, td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      th {
+        color: var(--text-secondary);
+        font-weight: 600;
+        font-size: 0.875rem;
+      }
+      
+      td {
+        color: var(--text-primary);
+        
+        svg {
+          margin-right: 0.5rem;
+          vertical-align: middle;
+          font-size: 0.875rem;
+          color: var(--text-secondary);
+        }
+        
+        .wpm-value {
+          font-weight: 700;
+          font-size: 1.125rem;
+        }
+        
+        .accuracy-bar {
+          position: relative;
+          background: var(--border-color);
+          border-radius: 4px;
+          height: 24px;
+          width: 100%;
+          max-width: 150px;
+          overflow: hidden;
+          
+          .accuracy-fill {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-700));
+            transition: width 0.3s ease;
+          }
+          
+          span {
+            position: relative;
+            z-index: 1;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: white;
+          }
+        }
+        
+        .difficulty-badge {
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: capitalize;
+          
+          &.easy {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+          }
+          
+          &.medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+          }
+          
+          &.hard {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+          }
+          
+          &.expert {
+            background: rgba(139, 92, 246, 0.2);
+            color: #8b5cf6;
+          }
+        }
+      }
+      
+      tr:hover td {
+        background: rgba(102, 126, 234, 0.05);
+      }
+    }
+  }
+}

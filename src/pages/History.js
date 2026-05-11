@@ -20,7 +20,7 @@ const History = () => {
 
   const fetchHistory = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/tests/history?limit=50');
+      const response = await axios.get('https://nextype-backend.onrender.com/api/tests/history?limit=50');
       setTests(response.data.tests);
       calculateStats(response.data.tests);
     } catch (error) {

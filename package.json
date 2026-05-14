@@ -1,6 +1,7 @@
 {
   "name": "nextype-frontend",
   "version": "1.0.0",
+  "homepage": "https://nextype-frontend.onrender.com",
   "private": true,
   "dependencies": {
     "axios": "^1.6.2",
@@ -20,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && xcopy public\\_redirects build\\ /Y /I",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

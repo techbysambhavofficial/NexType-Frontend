@@ -20,10 +20,10 @@
     "simple-keyboard-layouts": "^3.4.207"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && cp public/_redirects build/ 2>/dev/null || (copy public\\_redirects build\\ 2>nul && exit 0)",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

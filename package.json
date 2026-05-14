@@ -21,10 +21,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && xcopy public\\_redirects build\\ /Y /I",
+    "build": "react-scripts build && cp public/_redirects build/ 2>/dev/null || (copy public\\_redirects build\\ 2>nul && exit 0)",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
+  }
   "eslintConfig": {
     "extends": [
       "react-app"

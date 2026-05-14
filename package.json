@@ -24,7 +24,7 @@
     "build": "react-scripts build && cp public/_redirects build/ 2>/dev/null || (copy public\\_redirects build\\ 2>nul && exit 0)",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  }
+  },
   "eslintConfig": {
     "extends": [
       "react-app"
@@ -41,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=18.0.0 <21.0.0",
+    "npm": ">=9.0.0"
   }
 }
